@@ -154,14 +154,17 @@ const wordsCount = [
 ];
 
 function howManyTimes  (arr, search) {
-  if (arr.length === 0) {
+  let wordCount = 0;
+  if(arr.length === 0){
     return 0;
-  } else if (arr.includes(search)){
-    return 1
-  } else if (arr.length !== search){
-    return 0
-  } else { 
+  } else {
+    for (let i = 0; i < arr.length; i++){
+      if (arr[i].includes(search)){
+        wordCount++;
+      }
+    }
   }
+  return wordCount;
  }
  console.log(howManyTimes(wordsCount, 'dinning'));
 
