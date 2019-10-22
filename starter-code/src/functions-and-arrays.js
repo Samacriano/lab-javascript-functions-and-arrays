@@ -1,15 +1,59 @@
 // Find the maximum
+function maxOfTwoNumbers (num1, num2){
+  if (num1 > num2){
+    return num1
+  } else {
+    return num2
+  }
+}
+
+console.log(maxOfTwoNumbers(234, 567));
 
 // Finding Longest Word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+
+function findLongestWord (arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let longestWord;
+  for (let word of arr) {
+    if (typeof longestWord === 'undefined' || word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
 
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-// Calculate the Average
+function sumArray(arr){
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    sum = sum + arr[i];
+  }
+  return sum 
+}
+console.log(sumArray(numbers));
 
+// Calculate the Average
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function averageNumbers (arr){
+  let sum = 0;
+  if (arr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++){
+    sum = sum + arr[i];
+  }
+  return sum / arr.length;
+}
+console.log(averageNumbers(numbersAvg));
+
 
 // Array of Strings
 const wordsArr = [
@@ -24,6 +68,20 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
+
+function averageWordLength  (arr){
+  let sum = 0;
+  if (arr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++){
+    sum = sum + arr[i].length;
+  }
+  return sum / arr.length;
+}
+console.log(averageWordLength (wordsArr));
+
+
 
 // Unique Arrays
 const wordsUnique = [
@@ -40,6 +98,19 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(arr) {
+  let unique = {};
+  arr.forEach(function(i) {
+    if(!unique[i]) {
+      unique[i] = true;
+    }
+  });
+  return Object.keys(unique);
+}
+console.log(uniquifyArray(wordsUnique));
+
+
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -51,6 +122,21 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist (arr, search) {
+ if (arr === 0) {
+   return false;
+ } else if (arr.includes(search)){
+  return true;
+ } else {
+   return false;
+ }
+}
+console.log(doesWordExist(wordsFind, 'dinning'));
+
+
+
+
 
 // Counting Repetition
 const wordsCount = [
@@ -66,6 +152,18 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes  (arr, search) {
+  if (arr.length === 0) {
+    return 0;
+  } else if (arr.includes(search)){
+    return 1
+  } else if (arr.length !== search){
+    return 0
+  } else { 
+  }
+ }
+ console.log(howManyTimes(wordsCount, 'dinning'));
 
 // Bonus
 
